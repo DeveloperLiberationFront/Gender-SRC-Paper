@@ -1,0 +1,174 @@
+%-----------------------------------------------------------------------------
+%
+%               Template for sigplanconf LaTeX Class
+%
+% Name:         sigplanconf-template.tex
+%
+% Purpose:      A template for sigplanconf.cls, which is a LaTeX 2e class
+%               file for SIGPLAN conference proceedings.
+%
+% Guide:        Refer to "Author's Guide to the ACM SIGPLAN Class,"
+%               sigplanconf-guide.pdf
+%
+% Author:       Paul C. Anagnostopoulos
+%               Windfall Software
+%               978 371-2316
+%               paul@windfall.com
+%
+% Created:      15 February 2005
+%
+%-----------------------------------------------------------------------------
+
+
+\documentclass{sigplanconf}
+
+% The following \documentclass options may be useful:
+
+% preprint      Remove this option only once the paper is in final form.
+% 10pt          To set in 10-point type instead of 9-point.
+% 11pt          To set in 11-point type instead of 9-point.
+% authoryear    To obtain author/year citation style instead of numeric.
+
+\usepackage{amsmath}
+\usepackage{natbib}
+
+
+\begin{document}
+
+\special{papersize=8.5in,11in}
+\setlength{\pdfpageheight}{\paperheight}
+\setlength{\pdfpagewidth}{\paperwidth}
+
+\conferenceinfo{SPLASH '15}{October 25--30, 2015, Pittsburgh, PA, United States} 
+\copyrightyear{20yy} 
+\copyrightdata{978-1-nnnn-nnnn-n/yy/mm} 
+\doi{nnnnnnn.nnnnnnn}
+
+% Uncomment one of the following two, if you are not going for the 
+% traditional copyright transfer agreement.
+
+%\exclusivelicense                % ACM gets exclusive license to publish, 
+                                  % you retain copyright
+
+%\permissiontopublish             % ACM gets nonexclusive license to publish
+                                  % (paid open-access papers, 
+                                  % short abstracts)
+
+\titlebanner{banner above paper title}        % These are ignored unless
+\preprintfooter{short description of paper}   % 'preprint' option specified.
+
+\title{Contributions of the Under-Appreciated}
+\subtitle{Gender Bias in an Open-Source Ecology}
+
+\authorinfo{Andrew Kofink}
+           {North Carolina State University}
+           {ajkofink@ncsu.edu}
+% \authorinfo{Name2\and Name3}
+%            {Affiliation2/3}
+%            {Email2/3}
+
+\maketitle
+
+\begin{abstract}
+Sed, tempus tincidunt, pulvinar a, lectus. Vestibulum ante ipsum primis in
+faucibus orci luctus et ultrices posuere cubilia Curae; Maecenas interdum purus
+id risus. Ut ultricies cursus dui. In nec enim at odio aliquam iaculis. Fusce
+nisl. Pellentesque sagittis. Lorem ipsum dolor sit amet, consectetuer adipiscing
+elit. Aenean placerat tellus. In semper sagittis enim. Aliquam risus neque,
+pretium in, fermentum vitae, vulputate et, massa. Nulla sed erat vel eros ornare
+venenatis.
+\end{abstract}
+
+% \category{CR-number}{subcategory}{third-level}
+
+% general terms are not compulsory anymore, 
+% you may leave them out
+% \terms
+% term1, term2
+
+\keywords
+gender bias, software, open source
+
+\section{Problem and Motivation}
+Many human cultures perceive female contributions to technical
+fields as inappropriate for religious or culturally constructed reasons with
+negligible rationale. While personal freedom is valued in many states, the
+resulting economic inefficiency is a severe handicap. Furthermore, by any modern
+deontology, human females are due equal consideration as human males.
+
+Blatant under-appreciation of an individual or group in a certain
+discipline can discourage that group's contributions, further enforcing a
+constructed bias for that discipline.
+
+We believe that the contributions of female open source software developers are
+likely to be accepted and merged into collaborative projects on GitHub, an
+open-source software repository, at a different ratio than the contributions
+of male counterparts. Humans can determine the gender of a user many different
+ways, including inspection of a first and last name, with accuracy. Achieving
+similar accuracy with a computer program is non-trivial. Using recent publications in automated gender
+identification, in tandem with an application programmable interface (API) to
+access user data, we can compute the ratio of merged pull requests to
+determine the success ratio for each gender. If the difference of female to male merge success is
+significant, it may provide insight in understanding how gender differences are
+perceived and acted upon in subsets of
+society; it will also show how to repeat this process for larger, more extensive
+studies, suggested in future work.
+
+\section{Background and Related Work}
+Many collaborative sites require minimal user information; for GitHub, only a valid email
+address and a user name is necessary. This creates anonymity but also creates a
+challenge in the automation of gender-based studies, such
+as this one. Recent work to decipher gender information from user name data has been
+published by \cite{hemphill2014feminism}. This work enables an automated study
+of over $1e5$ raw user accounts in this study and many more in the future.
+
+\section{Approach and Uniqueness}
+We will obtain user and gender information mined in November 2014 from Bogdan
+Nicolae Vasilescu. Vasilescu used \cite{hemphill2014feminism} to determine the
+gender of each user based on the user first and last name.
+
+\section{Results and Contributions}
+We analyzed N pull requests with determined gender information from M different
+users. There were X pull requests created by female contributers and Y made by
+male. Of the X created by female, X' were successfully merged ($\frac{X'}{X}$). Y' male-created pull requests
+were merged successfully ($\frac{Y'}{Y}$).
+
+In this study, we used GitHub as a public source of real-world behavioral data.
+Many other collaborative, public environments exist on the Internet, complete
+with programmatic access: Wikipedia, Stack Overflow, etc. These other sites
+represent different mutable, mutually inclusive subgroups of the global
+society and can be used to understand behavioral tendencies of those subgroups
+towards gender perception.
+
+% \appendix
+% \section{Appendix Title}
+% This is the text of the appendix, if you need one.
+
+\acks
+
+% Acknowledgments, if needed.
+
+% We recommend abbrvnat bibliography style.
+
+\bibliographystyle{abbrvnat}
+\renewcommand{\bibfont}{\normalsize}
+
+% The bibliography should be embedded for final submission.
+
+\begin{thebibliography}
+\softraggedright
+
+\bibitem[Hemphill, Libby, et. al. (2014)]{hemphill2014feminism}
+
+\end{thebibliography}
+
+
+\end{document}
+
+%                       Revision History
+%                       -------- -------
+%  Date         Person  Ver.    Change
+%  ----         ------  ----    ------
+
+%  2013.06.29   TU      0.1--4  comments on permission/copyright notices
+

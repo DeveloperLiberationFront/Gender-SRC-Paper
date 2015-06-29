@@ -1,0 +1,9 @@
+GenderBiasInPushRequests
+*.sh
+*.pdf
+*.log
+*.blg
+*.bbl
+*.aux
+*.sql
+*.csv
