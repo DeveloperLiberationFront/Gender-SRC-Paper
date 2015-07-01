@@ -1,36 +1,9 @@
-%-----------------------------------------------------------------------------
-%
-%               Template for sigplanconf LaTeX Class
-%
-% Name:         sigplanconf-template.tex
-%
-% Purpose:      A template for sigplanconf.cls, which is a LaTeX 2e class
-%               file for SIGPLAN conference proceedings.
-%
-% Guide:        Refer to "Author's Guide to the ACM SIGPLAN Class,"
-%               sigplanconf-guide.pdf
-%
-% Author:       Paul C. Anagnostopoulos
-%               Windfall Software
-%               978 371-2316
-%               paul@windfall.com
-%
-% Created:      15 February 2005
-%
-%-----------------------------------------------------------------------------
-
 
 \documentclass{sigplanconf}
 
-% The following \documentclass options may be useful:
-
-% preprint      Remove this option only once the paper is in final form.
-% 10pt          To set in 10-point type instead of 9-point.
-% 11pt          To set in 11-point type instead of 9-point.
-% authoryear    To obtain author/year citation style instead of numeric.
-
 \usepackage{amsmath}
 \usepackage{natbib}
+\usepackage[scientific-notation=true]{siunitx}
 
 \begin{document}
 
@@ -62,13 +35,17 @@
 \authorinfo{Andrew Kofink}
            {North Carolina State University}
            {ajkofink@ncsu.edu}
-% \authorinfo{Name2\and Name3}
-%            {Affiliation2/3}
-%            {Email2/3}
 
 \maketitle
 
 \begin{abstract}
+  Female software developers account for only a small portion of the total
+  developer community. This inequality is caused by subtle yet powerful
+  interactions between different genders and society as a whole. Direct
+  discriminatory behavior presented publicly on a popular open-source software site is
+  mined to determine statistical relevance. The contributions of female developers
+  are accepted into open-source projects with roughly equivalent success to
+  those of males.
 \end{abstract}
 
 % \category{CR-number}{subcategory}{third-level}
@@ -81,17 +58,22 @@
 \keywords
 gender bias, software, open source
 
-In this paper, I contribute the first investigation of large scale gender bias
-in open-source software contributions.
-
-Contribution statement: what is done that hasn't ever been done
-Research question: 
-Results in a table
-
 \section{Problem and Motivation}
+
+Female software developers account for only 18\% of the total developer force,
+an issue which has garnered increased research attention recently.
+\citep{sherdiversity} Why does this gender inequality exist? In this paper, I
+contribute the first preliminary investigation of the cause of this gender bias
+by answering the following.
+
+\begin{quote}
+  \textbf{Research Question -} Does online collaborative interaction on GitHub result in
+  discrimination which may contribute to the issue of gender diversity?
+\end{quote}
+
 Many human cultures perceive female contribution to technical
 fields as inappropriate due to religious or culturally constructed attitudes, with
-negligible rationale. This has contributed to a gross imbalance in gender diversity among
+negligible rationale. \citep{elamin2010saudiwomen} This has contributed to a gross imbalance in gender diversity among
 the most technical computing and engineering fields, stymieing economic,
 scientific, and innovative pursuits.
 
@@ -105,9 +87,12 @@ discipline can discourage that group's contributions, further enforcing a
 constructed bias for that discipline; software development is one such
 field.
 
-Women account for only X\% of professional software developers, with little
-evidence of improving, with female undergraduate computer science students composing Y\% of
-their classes on average. This gender unbalance could be caused by many troubling subtleties
+\section{Background and Related Work}
+
+Women account for only 18\% of professional software developers,
+\cite{sherdiversity} with little evidence of improving, with female
+undergraduate computer science students composing 18\% of
+their classes on average in 2009 \cite{womenundergrad}. This gender unbalance could be caused by many troubling subtleties
 in societies, one potential being the differences, if any, in interactions
 between females and males, via any medium.
 
@@ -116,27 +101,38 @@ collaboration. If there are significant differences in the treatment given to ma
 and females, overall success in the collaborative project contribution process
 of GitHub, an open-source software repository host, may be one indication.
 
-\section{Background and Related Work}
-Humans can determine the gender of another individual via many different
-ways, including inspection of a first and last name, with accuracy. Achieving
-similar accuracy with a computer program is non-trivial; however, contacting the
-author of a recent publication in automated gender identification, we were
-granted access to user data mined from GitHub's GHTorrent in November 2014,
+GitHub does not record gender information about its users. Automated gender
+determination has recently been achieved with accuracy. \cite{VasilescuIWC13}
+Vasilescu, of \cite{VasilescuIWC13} granted access to user data mined from GitHub's GHTorrent in November 2014,
 along with the gender of all GitHub users up to that date.
 
-In tandem with GHTorrent's application programmable interface (API) to
-access user pull request history, the user-gender data allows the computation of
-the ratio of merge success for each gender.
+\section{Approach and Uniqueness}
 
-Regardless of the significance in the difference of female to male success, this study will 
-show how to repeat this process for other public data. In this study, we use GitHub as a public source of real-world behavioral data.
+Of 2.9 million usernames, 1.8 million were ambiguous and thus
+not used for the purposes of this study. Of the remaining, 91 thousand were
+female users and 958 thousand were male.
+
+GitHub's contributions are organized in pull requests, complete with a single
+user who created the pull request and a status. The status may be open, closed,
+or merged. Merged pull requests are seen by this study as a success, and closed pull
+requests are determined to be non-successful.
+
+In tandem with GHTorrent's GitHub data store to
+access user pull request history, the user-gender data allowed the computation of
+the ratio of merge success for each gender. This level of intricate user interaction
+between varying diverse people groups has never been closely investigated until
+now. This single data metric encourages a more complete examination to better
+understand the results.
+
+The significance in the difference of female to male success is not the most
+significant contribution: this study will pioneer this process for user on other public data.
+In this study, we use only one source of real-world behavioral data.
 Many other collaborative, public environments exist on the Internet, complete
-with programmatic access: Wikipedia, Stack Overflow, etc. These other sites
-represent different mutable, mutually inclusive subgroups of the global
+with programmatic access: Wikipedia, Stack Overflow, etc. These other
+communities represent different mutable, mutually inclusive subgroups of the global
 society and can be used to understand behavioral tendencies of those subgroups
 towards gender perception.
 
-\section{Approach and Uniqueness}
 Due to the politically volatile nature of this and other related data on gender
 or diversity distributions in a service's use, many organizations which value
 public opinion are apprehensive about advertising gender inequalities. These new data
@@ -145,11 +141,19 @@ ecosystems of the internet without exposing a company's prior knowledge of a
 potential issue.
 
 \section{Results and Contributions}
+
+\begin{center}
+  \begin{tabular}{l|l|l|l}
+     & Pull Requests & Merged & Closed \\ \hline
+     Female & \num{19e4} & \num{88e3} & \num{95e3} \\ \hline
+     Male & \num{36e5} & \num{16e5} & \num{17e5}
+  \end{tabular}
+\end{center}
+
 We analyzed 3.8 million pull requests with determined gender information from
 2.9 million different users. There were 197936 pull requests created by female contributers and 3651803 made by
-male. Of the 197936 created by female, 88884 were successfully merged
-($44.91\%$), and 1620168 male-created pull requests
-were merged successfully ($44.37\%$).
+male. Of the 197936 created by female, $44.91\%$ were successfully merged, while $44.37\%$ male-created pull requests
+were merged successfully.
 
 While female pull request contributions account for only $5.14\%$ of the total pull
 requests submitted in this data set, it is surprising to find that the merge
@@ -159,7 +163,8 @@ however, the public proceedings of GitHub users, at least until November 2014,
 shows no bias in female collaborative success, despite the 8.71\% female
 user base represented by that data.
 
-Speculations as to the cause of these results can lead to more detailed studies;
+Speculations as to the cause of these results can lead to more detailed studies,
+as mentioned previously;
 
 Perhaps female software developers are bolstered by hardships faced as a severe
 minority, thus increasing their average quality of contribution. If female
@@ -170,8 +175,6 @@ in this study to determine if a quality-of-work bias occurs between genders;
 Determining a causal relationship to the skewed merge success rate may be a
 challange, however. Such a study would necessarily relate merge success rate to
 pull request quality, with gender as a control.
-
-\cite{elamin2010saudiwomen}
 
 Due to the widespread knowledge of gender inequality in software development,
 female developers may choose to anonymize their gender online. This bias would
@@ -192,6 +195,7 @@ be determined for those users who choose to obviate gender identification.
 % We recommend abbrvnat bibliography style.
 
 \bibliographystyle{abbrvnat}
+
 \bibliography{ajkofink}
 
 \end{document}
