@@ -62,30 +62,13 @@
 \keywords
 gender bias, software, open source, implicit bias
 
-% Review Comments:
-% - A more thorough discussion and analysis of the experimental set up would be appropriate.
-% - Include more up-to-date numbers on enrollment in CS courses; there has been
-% news about recent movement on that front, and certainly at top universities
-% and in first CS courses
-% -  include more related work; this is a greatly-studied question and there's
-%    more that you can cite.
-% - it is fairly well-known that females tend to be as competent as males when
-%   you look at results, but they will just usually apply to things less often
-%   when they don't feel completely qualified
-% - The writing could also be tightened. As an example, the abstract contains a
-%   number of different ideas which aren't linked together. When producing any
-%   type of writing, try to make sure that each sentence is related to the ones
-%   around it. There is reference to direct discriminatory behavior but I'd
-%   expect that to be in the form of flaming emails. So I'd clarify what you
-%   mean there. I think that what you mean is that peoples' pull requests get
-%   rejected ostensibly due to being female.
-
 \section{Problem and Motivation}
 
+It is well documented that women are underrepresented in technical fields:
 42\% of all doctoral degrees in science, technology, education, and
-math (STEM) are earned by women, yet only 28\% of tenure-track faculty in these
-fields are women \citep{womenengineering}. Why does this gender inequality exist?
-Jackson, et al. claims that implicit bias and explicit behavior are main
+math (STEM) are earned by women, and only 28\% of tenure-track faculty in these
+fields are women \citep{womenengineering}. Jackson, et al. claims that implicit
+bias and explicit behavior are main
 factors of this finding \citep{implicitbias}. In this paper, I
 contribute the first preliminary investigation of these factors of gender bias
 by answering the following.
@@ -105,8 +88,8 @@ scientific, and innovative pursuits \citep{genderscience}.
 
 The resulting inefficiencies in overall creativity and technical expertise
 can be a severe handicap to any society, notwithstanding universal human rights
-violations; By any modern deontological theory, human females are due equal
-consideration as human males, ethically and professionally \citep{ethicsgender}.
+violations; by any modern ethical theory, human females are due equal
+consideration as human males \citep{ethicsgender}.
 
 Under-appreciation of an individual or group in a certain
 discipline can discourage that group's contributions, further enforcing a
@@ -117,18 +100,18 @@ In 2005-2006, women accounted for only 20.6\% of awarded computer and informatio
 science undergraduate degrees, according to the National Center for Education
 Statistics (NCES), while women earned 52\% of all undergraduate
 math and science degrees overall \citep{genderdiversitycomputing}.
-Sax, et al. claims that there is some evidence of improvement, with female
+Sax et al. claims that there is some evidence of improvement, with female
 undergraduate computer and information science students composing only 13.6\% of
 their classes on average in 1971, the minimum recorded, and presently 18.2\%, a
 25\% increase according to the NCES. The highest ratio of female students,
 37.1\% was recorded in 1984 \citep{evolutionofwomen}.
 This underrepresented population is a problem because of the great demand yet
-decreasing supply of jobs in this field: By 2018, US universities will only
+decreasing supply of jobs in this field: by 2018, US universities will only
 supply 52\% of the 1.4 million available jobs in computation and information
 sciences \citep{genderdiversitycomputing}.
 
-This gender imbalance could be caused by many troubling subtleties
-in a community, one potential being the differences, if any, in interactions
+This gender imbalance could be caused by many troubling subtleties,
+one potential being the differences, if any, in interactions
 between females and males, via any medium \citep{implicitbias}.
 
 These interactions include software 
@@ -142,16 +125,18 @@ literature on implicit bias.
 \section{Approach and Uniqueness}
 
 GitHub does not record gender information about its users. Automated gender
-determination has recently been achieved with some accuracy
-\cite{VasilescuIWC13}.
-Vasilescu (2014), granted access to user data mined from GitHub's GHTorrent in November 2014,
-along with the gender of all GitHub users up to that date.
+determination has recently been achieved \cite{VasilescuIWC13}.
+Vasilescu (2014) granted access to user data mined from GHTorrent in November 2014,
+along with the gender of all GitHub users up to that date using the process
+outlined in Vasilescu (2014). Observation of individual data points in the given
+gender data showed inaccuracies. To overcome this challenge, I mined Google+
+accounts, which publicly display gender information; GitHub accounts are
+associated with email addresses, so joining the sets resulted in user-gender
+identification.
 
-% Insert google+ gender validation process here
-
-Of 2.9 million usernames, 1.8 million were ambiguous and thus
-not used for the purposes of this study. Of the remaining, 91 thousand were
-female users and 958 thousand were male.
+Of the \num{2917942} usernames, \num{1868597} were not defined on Google+ and thus
+not used for the purposes of this study. Of the remaining, \num{91357} were
+female users and \num{957988} were male.
 
 GitHub's contributions are organized in pull requests, complete with a single
 user who created the pull request and a status. The status may be open, closed,
@@ -189,7 +174,7 @@ potential issue.
 
 \section{Results and Contributions}
 
-\begin{table}
+\begin{table}[h]
   \begin{center}
     \begin{tabular}{l|l|l}
       & Female & Male\\ \hline
@@ -229,7 +214,7 @@ Due to the widespread knowledge of gender inequality in software development,
 female developers may choose to anonymize their gender online. This bias would
 be very difficult to detect; in this study, users of GitHub whose usernames are
 not indicative of a gender were discarded. These users of unknown gender may be
-an interesting "third gender" to consider in all of the above data queries. By
+an interesting third gender to consider in all of the above data queries. By
 analyzing other indicators, such as the contribution quality, mentioned above,
 significant findings may be able to be determined for those users who choose to
 avoid gender identification.
