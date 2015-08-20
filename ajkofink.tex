@@ -3,7 +3,7 @@
 
 \usepackage{amsmath}
 \usepackage{natbib}
-\usepackage[scientific-notation=true]{siunitx}
+\usepackage[group-separator={,}]{siunitx}
 \usepackage{graphicx}
 
 \begin{document}
@@ -86,7 +86,7 @@ gender bias, software, open source, implicit bias
 math (STEM) are earned by women, yet only 28\% of tenure-track faculty in these
 fields are women \citep{womenengineering}. Why does this gender inequality exist?
 Jackson, et al. claims that implicit bias and explicit behavior are main
-factors of this finding \cite{implicitbias}. In this paper, I
+factors of this finding \citep{implicitbias}. In this paper, I
 contribute the first preliminary investigation of these factors of gender bias
 by answering the following.
 
@@ -100,11 +100,11 @@ by answering the following.
 Many human cultures perceive female contribution to technical
 fields as inappropriate due to religious or culturally constructed attitudes, with
 negligible rationale \citep{elamin2010saudiwomen}. This has contributed to a gross imbalance in gender diversity among
-the most technical computing and engineering fields, stymieing economic,
-scientific, and innovative pursuits \citep{genderscience}
+the most technical computing and engineering fields, frustrating economic,
+scientific, and innovative pursuits \citep{genderscience}.
 
-The resulting inefficiencies and creative
-squander can be a severe handicap to any society, notwithstanding universal human rights
+The resulting inefficiencies in overall creativity and technical expertise
+can be a severe handicap to any society, notwithstanding universal human rights
 violations; By any modern deontological theory, human females are due equal
 consideration as human males, ethically and professionally \citep{ethicsgender}.
 
@@ -128,23 +128,26 @@ supply 52\% of the 1.4 million available jobs in computation and information
 sciences \citep{genderdiversitycomputing}.
 
 This gender imbalance could be caused by many troubling subtleties
-in societies, one potential being the differences, if any, in interactions
+in a community, one potential being the differences, if any, in interactions
 between females and males, via any medium \citep{implicitbias}.
 
-These interactions include asynchronous web-based software development
+These interactions include software 
 collaboration. If there are significant explicit behavioral differences in the
-treatment given to males and females, revealing evidence in the overall success of
-collaborative project contributions on GitHub, an open-source software
-repository host, may be one indication. The ability to mine this information
+treatment given to males and females, then revealing evidence in the overall success of
+collaborative project contributions on the open-source Git
+repository service, GitHub, may be one indication. The ability to mine this information
 presents an interesting ecosystem to observe real user behavior to validate current
 literature on implicit bias.
 
 \section{Approach and Uniqueness}
 
 GitHub does not record gender information about its users. Automated gender
-determination has recently been achieved with accuracy. \cite{VasilescuIWC13}
+determination has recently been achieved with some accuracy
+\cite{VasilescuIWC13}.
 Vasilescu (2014), granted access to user data mined from GitHub's GHTorrent in November 2014,
 along with the gender of all GitHub users up to that date.
+
+% Insert google+ gender validation process here
 
 Of 2.9 million usernames, 1.8 million were ambiguous and thus
 not used for the purposes of this study. Of the remaining, 91 thousand were
@@ -158,7 +161,8 @@ requests are determined to be non-successful.
 In tandem with GHTorrent's GitHub data store to
 access user pull request history, the user-gender data allowed the computation of
 the ratio of merge success for each gender. This level of intricate user interaction
-between varying diverse people groups has never been closely investigated until
+between varying diverse people groups has never been closely investigated with
+respect to implicit bias and explicit behavior until
 now. This single data metric encourages a more complete examination to better
 understand the results.
 
@@ -172,7 +176,7 @@ collaboration metrics is advised.
 In this study, I use only one source of real-world behavioral data.
 Many other collaborative, public environments exist on the Internet, complete
 with programmatic access: Wikipedia, Stack Overflow, etc. These other
-communities represent different mutable, mutually inclusive subgroups of the global
+communities represent different mutually inclusive subgroups of the global
 society and can be used to understand behavioral tendencies of those subgroups
 towards gender perception.
 
@@ -185,37 +189,39 @@ potential issue.
 
 \section{Results and Contributions}
 
-\begin{center}
-  \begin{tabular}{l|l|l|l}
-     & Pull Requests & Merged & Closed \\ \hline
-     Female & \num{19e4} & \num{88e3} & \num{95e3} \\ \hline
-     Male & \num{36e5} & \num{16e5} & \num{17e5}
-  \end{tabular}
-\end{center}
+\begin{table}
+  \begin{center}
+    \begin{tabular}{l|l|l}
+      & Female & Male\\ \hline
+      Pull Requests & \num{197936} & \num{3651803} \\ \hline
+      Successful  & \num{88894} & \num{1620304} \\ \hline
+      Unsuccessful  & \num{109042} & \num{2031499} \\ \hline
+      \% Successful & \num{44.91} & \num{44.37} \\ \hline
+    \end{tabular}
+    \caption{Contribution Success by Gender}
+  \end{center}
+\end{table}
 
 I analyzed 3.8 million pull requests with determined gender information from
-2.9 million different users. There were 197936 pull requests created by female contributers and 3651803 made by
-male. Of the 197936 created by female, $44.91\%$ were successfully merged, while $44.37\%$ male-created pull requests
-were merged successfully.
+2.9 million different users. The final contribution success results are shown in Table 1.
 
 While female pull request contributions account for only $5.14\%$ of the total pull
 requests submitted in this data set, it is surprising to find that the merge
 success rate is nearly equivalent to male success rate. Unequal gender
 distribution found in technical fields may yet be worsened by unequal treatment;
-however, the public proceedings of GitHub users, at least until November 2014,
+however, the public activity of GitHub users, at least until November 2014,
 shows no bias in female collaborative success, despite the 8.71\% female
 user base represented by that data.
 
 Speculations as to the cause of these results can lead to more detailed studies,
-as mentioned previously;
-
-Perhaps female software developers are bolstered by hardships faced as a severe
+as mentioned previously:
+Perhaps female software developers are bolstered by the hardships faced as a
 minority, thus increasing their average quality of contribution. If female
 contributions are of greater quality than that of males, any discriminatory
-action against female contributors may be statistically nuetralized. Static
+action against female contributors may be statistically neutralized. Static
 analysis tools could be used on the commit content of each pull request gathered
-in this study to determine if a quality-of-work bias occurs between genders;
-\cite{staticanalysis} Determining a causal relationship to the skewed merge success rate may be a
+in this study to determine if a quality-of-work bias occurs between genders
+\cite{staticanalysis}; Determining a causal relationship to the skewed merge success rate may be a
 challenge, however. Such a study would necessarily relate merge success rate to
 pull request quality, with gender as a control.
 
@@ -227,6 +233,13 @@ an interesting "third gender" to consider in all of the above data queries. By
 analyzing other indicators, such as the contribution quality, mentioned above,
 significant findings may be able to be determined for those users who choose to
 avoid gender identification.
+
+\section{Acknowledgments}
+\begin{description}
+  \item Emerson Murphy-Hill
+  \item Josh Terrell
+  \item Bogdan Vasilescu
+\end{description}
 
 % \appendix
 % \section{Appendix Title}
