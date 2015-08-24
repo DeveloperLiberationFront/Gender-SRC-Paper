@@ -138,13 +138,9 @@ GitHub does not record gender information about its users. Automated gender
 determination has recently been achieved \cite{VasilescuIWC13}.
 Vasilescu (2014) granted access to user data mined from GHTorrent in November 2014,
 along with the gender of all GitHub users up to that date using the process
-outlined in Vasilescu (2014). Observation of individual data points in the given
-gender data showed inaccuracies. To overcome this challenge, I mined Google+
-accounts, which publicly display gender information; GitHub accounts are
-associated with email addresses, so joining the sets resulted in user-gender
-identification.
+outlined in Vasilescu (2014).
 
-Of the \num{2917942} usernames, \num{1868597} were not defined on Google+ and thus
+Of the \num{2917942} usernames, \num{1868597} were ambiguous and thus
 not used for the purposes of this study. Of the remaining, \num{91357} were
 female users and \num{957988} were male.
 
@@ -189,22 +185,22 @@ potential issue.
     \caption{Contribution Success by Gender}
     \begin{tabular}{l|r|r}
       & Female & Male\\ \hline
-      Pull Requests & \num{197936} & \num{3651803} \\ \hline
-      Successful  & \num{88894} & \num{1620304} \\ \hline
-      Unsuccessful  & \num{109042} & \num{2031499} \\ \hline
-      Success Rate & \num{44.91}\% & \num{44.37}\% \\ \hline
+      Pull Requests & \num{82217} & \num{1729414} \\ \hline
+      Successful  & \num{52784} & \num{1104557} \\ \hline
+      Unsuccessful  & \num{29433} & \num{624857} \\ \hline
+      Success Rate & \num{64.20}\% & \num{63.87}\% \\ \hline
     \end{tabular}
   \end{center}
 \end{table}
 
-I analyzed \num{3849739} pull requests with determined gender information from
+I analyzed \num{1811631} pull requests with determined gender information from
 \num{1049345} different users. The final contribution success results are shown in Table 1.
 
-While female pull request contributions account for only $5.14\%$ of the total pull
+While female pull request contributions account for only $4.54\%$ of the total pull
 requests submitted in this data set, it is surprising to find that the merge
 success rate is nearly equivalent to male success rate. Unequal gender
 distribution found in technical fields may yet be worsened by unequal treatment;
-however, the public activity of GitHub users, at least until July 2015,
+however, the public activity of GitHub users, at least until November 2014,
 shows no bias in female collaborative success, despite the 8.71\% female
 user base represented by that data.
 
